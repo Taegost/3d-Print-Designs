@@ -14,6 +14,10 @@ difference() {
 // Wings to hold it on the arm
 wingHeight = cupholderHeight + 10;
 wingWidth = 2;
-translate([armWidth / 2,-(armBridgeWidth / 2),-(cupholderHeight)]){
-    cube([wingWidth, armBridgeWidth, wingHeight], false);
+offset = -1.27; // I haven't figured out why I need this offset
+translate([armWidth / 2,0,offset-(cupholderHeight/2)]){
+    cube([wingWidth, armBridgeWidth, wingHeight], true);
+}
+translate([-armWidth / 2,0,offset-(cupholderHeight/2)]){
+    cube([wingWidth, armBridgeWidth, wingHeight], true);
 }
